@@ -1,4 +1,4 @@
-# 🍎 New MacBook Pro Setup Guide
+# MacBook Setup Guide (Personal)
 
 A personal checklist and command reference for setting up a clean, lean, and secure MBP — optimized for dev use with minimal bloat.
 
@@ -65,9 +65,6 @@ brew install --cask rectangle    # window snapping (macOS lacks this natively)
 ```bash
 brew install --cask raycast      # better Spotlight: launcher + clipboard history
 ```
-```bash
-brew install --cask bitwarden    # free, open-source password manager
-```
 
 > **Web-first philosophy:** Notion, Slack, Figma etc. work fine in Chrome — skip native apps until you feel the need.
 
@@ -124,14 +121,23 @@ brew upgrade         # updates all installed packages
 |---|---|
 | Turn on **Firewall** | System Settings → Privacy & Security → Firewall |
 | Enable **FileVault** (full-disk encryption) | System Settings → Privacy & Security → FileVault |
-| Restrict **AirDrop** | System Settings → General → AirDrop → Contacts Only (or Off) |
 | Disable **Analytics** | System Settings → Privacy → Analytics → turn off |
 
 ### Chrome Settings
 
 - `chrome://settings/cookies` → Block third-party cookies
 - `chrome://settings/privacy` → Enable Enhanced Protection
-- Install **[uBlock Origin](https://chrome.google.com/webstore/detail/ublock-origin/)** extension — best-in-class tracker/ad blocker
+
+### Chrome Extensions
+
+> ⚠️ **uBlock Origin heads-up:** The full uBlock Origin was removed from the Chrome Web Store in late 2024 due to Google's Manifest V3 changes. For Chrome, install **uBlock Origin Lite** (reduced but still solid). For full ad-blocking, switch to **Firefox** or **Brave**.
+
+| Extension | Purpose | Link |
+|---|---|---|
+| **uBlock Origin Lite** | Ad & tracker blocking (Chrome) | [Install](https://chromewebstore.google.com/detail/ublock-origin-lite/ddkjiahejlhfcafbddmgiahcphecmpfh) |
+| **Snowflake** | Donate bandwidth to help users in censored countries reach Tor | [Install](https://chromewebstore.google.com/detail/snowflake/mafpmfcccpbjnhfhjnllmmalhifmlcie) |
+
+> 💡 **Snowflake** is by the Tor Project — runs silently in the background. When the icon turns green, a censored user is tunneling through your connection. Your IP is not exposed to the sites they visit.
 
 ### Optional: Outbound Firewall
 
@@ -148,11 +154,34 @@ brew install --cask lulu    # free, open-source — prompts you when any app pho
 | App | Purpose | Install |
 |---|---|---|
 | **Chrome** | Browser | [google.com/chrome](https://www.google.com/chrome) |
-| **Claude** | AI assistant | [claude.ai](https://claude.ai) or App Store |
 | **Rectangle** | Window management | `brew install --cask rectangle` |
 | **Raycast** | Launcher + clipboard | `brew install --cask raycast` |
-| **Bitwarden** | Password manager | `brew install --cask bitwarden` |
 | **JetBrains IDE** | Dev (when edu license renewed) | [jetbrains.com](https://www.jetbrains.com) |
+
+---
+
+## 8. Terminal Help
+
+**Syntax highlighting** — color-codes commands as you type (green = valid, red = unknown):
+
+```bash
+brew install zsh-syntax-highlighting
+```
+```bash
+echo "source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc
+```
+```bash
+source ~/.zshrc
+```
+
+**Fuzzy history search** — press `Ctrl+R` to search all past commands interactively:
+
+```bash
+brew install fzf
+```
+```bash
+$(brew --prefix)/opt/fzf/install
+```
 
 ---
 
