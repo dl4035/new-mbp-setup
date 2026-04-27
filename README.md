@@ -139,14 +139,6 @@ brew upgrade         # updates all installed packages
 
 > 💡 **Snowflake** is by the Tor Project — runs silently in the background. When the icon turns green, a censored user is tunneling through your connection. Your IP is not exposed to the sites they visit.
 
-### Optional: Outbound Firewall
-
-```bash
-brew install --cask lulu    # free, open-source — prompts you when any app phones home
-```
-
-> Paid alternative: **Little Snitch** (~$45 one-time) for more granular control.
-
 ---
 
 ## 7. App Stack (Minimal)
