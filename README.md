@@ -97,7 +97,7 @@ memory_pressure      # simple health check: outputs good / warning / critical
 
 ## 5. Periodic Cleanup
 
-Run these occasionally (e.g. monthly) to keep things tidy:
+Run these occasionally to keep things tidy:
 
 ```bash
 brew cleanup         # removes old versions of installed packages
@@ -109,8 +109,6 @@ brew autoremove      # removes unused dependencies
 brew upgrade         # updates all installed packages
 ```
 
-> 💡 Run each command on its own line — don't paste them together.
-
 ---
 
 ## 6. Privacy & Security
@@ -121,7 +119,29 @@ brew upgrade         # updates all installed packages
 |---|---|
 | Turn on **Firewall** | System Settings → Privacy & Security → Firewall |
 | Enable **FileVault** (full-disk encryption) | System Settings → Privacy & Security → FileVault |
+| Restrict **AirDrop** | System Settings → General → AirDrop → Contacts Only (or Off) |
 | Disable **Analytics** | System Settings → Privacy → Analytics → turn off |
+
+### Disable Google AI Mode in Search
+
+**Step 1 — Account-level (all browsers):**
+Go to [labs.google.com/search](https://labs.google.com/search) — make sure the "AI Mode" is turned off.
+
+![alt text](screenshot1.png "Title")
+
+**Step 2 — Chrome: force clean results as default:**
+1. `chrome://settings/searchEngines` → under Site search → **Add**
+2. Fill in:
+   - Name: `Google Clean` (set your customized Name and shortcut)
+   - Shortcut: `@nonai`
+   - URL: `https://www.google.com/search?q=%s&udm=14`
+3. Find it in the list → click ⋯ → **Make default**
+
+![alt text](screenshot2.png "Title")
+
+**Step 3 — Safari:**
+Safari doesn't support custom search engines natively. Cleanest fix: set default search engine to **DuckDuckGo** — no AI results, no tracking.
+System Settings → Safari → Search Engine → **DuckDuckGo**
 
 ### Chrome Settings
 
@@ -148,11 +168,11 @@ brew upgrade         # updates all installed packages
 | **Chrome** | Browser | [google.com/chrome](https://www.google.com/chrome) |
 | **Rectangle** | Window management | `brew install --cask rectangle` |
 | **Raycast** | Launcher + clipboard | `brew install --cask raycast` |
+| **Bitwarden** | Password manager | `brew install --cask bitwarden` |
 | **JetBrains IDE** | Dev (when edu license renewed) | [jetbrains.com](https://www.jetbrains.com) |
 
 ---
-
-## 8. Terminal Help
+## 8. Terminal Helper
 
 **Syntax highlighting** — color-codes commands as you type (green = valid, red = unknown):
 
@@ -178,10 +198,7 @@ $(brew --prefix)/opt/fzf/install
 ---
 
 ## Tips
-
-- **Run commands one at a time** — never paste multi-line blocks with `#` comments directly into Terminal
 - `#` comments in shell scripts are fine in `.sh` files, but pasting them into an interactive terminal causes errors
-- Keep this README updated as your stack evolves
 
 ---
 
