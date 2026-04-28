@@ -168,7 +168,6 @@ System Settings → Safari → Search Engine → **DuckDuckGo**
 | **Chrome** | Browser | [google.com/chrome](https://www.google.com/chrome) |
 | **Rectangle** | Window management | `brew install --cask rectangle` |
 | **Raycast** | Launcher + clipboard | `brew install --cask raycast` |
-| **Bitwarden** | Password manager | `brew install --cask bitwarden` |
 | **JetBrains IDE** | Dev (when edu license renewed) | [jetbrains.com](https://www.jetbrains.com) |
 
 ---
